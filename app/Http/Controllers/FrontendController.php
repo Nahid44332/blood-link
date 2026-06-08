@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donor;
+use App\Models\EmergencyBank;
+use App\Models\Fact;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -22,8 +24,9 @@ class FrontendController extends Controller
     }
 
     $donors = $query->get();
-
-    return view('frontend.index', compact('donors'));
+    $facts = Fact::get();
+    $emergencyBanks = EmergencyBank::all();
+    return view('frontend.index', compact('donors', 'facts', 'emergencyBanks'));
 }
 
     public function store(Request $request)

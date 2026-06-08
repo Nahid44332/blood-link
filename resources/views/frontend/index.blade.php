@@ -130,30 +130,13 @@
         <p class="text-gray-400 text-sm mb-12">Know your impact. Stay healthy. Donate confidently.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="p-8 border border-gray-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition">
-                <i class="fas fa-heart-pulse text-red-500 mb-6 text-xl"></i>
-                <h5 class="font-bold mb-3 text-sm">One donation, three lives</h5>
-                <p class="text-xs text-gray-500 leading-relaxed">A single unit of blood can be separated into red cells,
-                    plasma, and platelets — saving up to three lives.</p>
+            @foreach ($facts as $fact)
+                <div class="p-8 border border-gray-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition">
+                <i class="{{$fact->icon}} text-red-500 mb-6 text-xl"></i>
+                <h5 class="font-bold mb-3 text-sm">{{$fact->title}}</h5>
+                <p class="text-xs text-gray-500 leading-relaxed">{{$fact->description}}</p>
             </div>
-            <div class="p-8 border border-gray-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition">
-                <i class="fas fa-bolt text-red-500 mb-6 text-xl"></i>
-                <h5 class="font-bold mb-3 text-sm">Replenishes quickly</h5>
-                <p class="text-xs text-gray-500 leading-relaxed">Your body replaces lost plasma in 24 hours and red
-                    cells in 4-6 weeks. Donate every 90 days safely.</p>
-            </div>
-            <div class="p-8 border border-gray-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition">
-                <i class="fas fa-apple-whole text-red-500 mb-6 text-xl"></i>
-                <h5 class="font-bold mb-3 text-sm">Eat iron-rich foods</h5>
-                <p class="text-xs text-gray-500 leading-relaxed">Spinach, beans, red meat, and fortified cereals help
-                    maintain healthy hemoglobin levels.</p>
-            </div>
-            <div class="p-8 border border-gray-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition">
-                <i class="fas fa-droplet text-red-500 mb-6 text-xl"></i>
-                <h5 class="font-bold mb-3 text-sm">Stay hydrated</h5>
-                <p class="text-xs text-gray-500 leading-relaxed">Drink an extra 500ml of water before donating and avoid
-                    heavy exercise for 24 hours after.</p>
-            </div>
+            @endforeach
         </div>
     </section>
 
@@ -340,38 +323,29 @@
     </div>
 
     <!-- Emergency Blood Banks Modal -->
-    <div id="emergencyModal"
-        class="fixed inset-0 bg-black/40 hidden items-center justify-center z-[110] modal-blur p-4">
-        <div class="bg-white rounded-[2.5rem] max-w-lg w-full p-10 shadow-2xl relative">
-            <button onclick="closeModal('emergencyModal')"
-                class="absolute top-8 right-8 text-gray-400 hover:text-gray-600 transition">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-            <h3 class="text-2xl font-bold text-gray-900 mb-8">Emergency blood banks</h3>
-            <div class="space-y-4">
-                <div
-                    class="flex items-center justify-between p-5 border border-gray-100 rounded-[1.5rem] hover:bg-gray-50 transition text-left">
+   <div id="emergencyModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-[110] modal-blur p-4">
+    <div class="bg-white rounded-[2.5rem] max-w-lg w-full p-10 shadow-2xl relative">
+        <button onclick="closeModal('emergencyModal')" class="absolute top-8 right-8 text-gray-400 hover:text-gray-600 transition">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">Emergency blood banks</h3>
+        
+        <div class="space-y-4">
+            @foreach($emergencyBanks as $bank)
+                <div class="flex items-center justify-between p-5 border border-gray-100 rounded-[1.5rem] hover:bg-gray-50 transition text-left">
                     <div>
-                        <h4 class="font-bold text-gray-900 text-base">Quantum Foundation</h4>
-                        <p class="text-gray-400 text-sm mt-1">+880 9611 699 605</p>
+                        <h4 class="font-bold text-gray-900 text-base">{{ $bank->name }}</h4>
+                        <p class="text-gray-400 text-sm mt-1">{{ $bank->phone }}</p>
                     </div>
-                    <a href="tel:+8809611699605"
-                        class="bg-red-600 text-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-bold hover:bg-red-700 transition"><i
-                            class="fas fa-phone-alt text-xs"></i> Call</a>
+                    <a href="tel:{{ $bank->phone }}"
+                        class="bg-red-600 text-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-bold hover:bg-red-700 transition">
+                        <i class="fas fa-phone-alt text-xs"></i> Call
+                    </a>
                 </div>
-                <div
-                    class="flex items-center justify-between p-5 border border-gray-100 rounded-[1.5rem] hover:bg-gray-50 transition text-left">
-                    <div>
-                        <h4 class="font-bold text-gray-900 text-base">National Emergency Service</h4>
-                        <p class="text-gray-400 text-sm mt-1">999</p>
-                    </div>
-                    <a href="tel:999"
-                        class="bg-red-600 text-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-bold hover:bg-red-700 transition"><i
-                            class="fas fa-phone-alt text-xs"></i> Call</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
+</div>
 
     <script>
         // const donors = [{

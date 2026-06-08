@@ -22,10 +22,10 @@
                 <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
                     <i class="fas fa-droplet text-base w-5"></i> Blood Requests
                 </a>
-                <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
-                    <i class="fas fa-table-cells text-base w-5"></i> Compatibility Grid
+                <a href="{{route('admin.emergency.index')}}" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
+                    <i class="fas fa-table-cells text-base w-5"></i> Emergency Contacts
                 </a>
-                <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
+                <a href="{{url('/admin/health-tips')}}" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
                     <i class="fas fa-heart-pulse text-base w-5"></i> Health Tips
                 </a>
                 <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
@@ -65,10 +65,10 @@
                 <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
                     <i class="fas fa-droplet text-base w-5"></i> Blood Requests
                 </a>
-                <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
-                    <i class="fas fa-table-cells text-base w-5"></i> Compatibility Grid
+                <a href="{{route('admin.emergency.index')}}" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
+                    <i class="fas fa-table-cells text-base w-5"></i> Emergency Contacts
                 </a>
-                <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
+                <a href="{{url('/admin/health-tips')}}" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
                     <i class="fas fa-heart-pulse text-base w-5"></i> Health Tips
                 </a>
                 <a href="#" class="flex items-center gap-3.5 px-4 py-3 text-slate-500 hover:text-[#E53935] hover:bg-slate-50 font-semibold rounded-2xl text-[13.5px] transition">
